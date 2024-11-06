@@ -151,6 +151,88 @@ Infrastructure health is maintained through:
    - Security patching
    - Performance tuning
 
+```
+freedom-forge-backend/
+├── src/
+│   ├── config/
+│   │   ├── app.ts                 # Application configuration
+│   │   ├── database.ts            # CockroachDB configuration
+│   │   ├── redis.ts               # Redis configuration
+│   │   ├── kafka.ts               # Kafka configuration
+│   │   └── ipfs.ts                # IPFS configuration
+│   │
+│   ├── api/
+│   │   ├── rest/                  # Oak REST API handlers
+│   │   │   ├── routes/
+│   │   │   │   ├── auth.ts
+│   │   │   │   ├── profiles.ts
+│   │   │   │   ├── projects.ts
+│   │   │   │   └── payments.ts
+│   │   │   └── middleware/
+│   │   │       ├── auth.ts
+│   │   │       ├── rateLimit.ts
+│   │   │       └── validation.ts
+│   │   │
+│   │   └── graphql/              # GraphQL Yoga implementation
+│   │       ├── schema/
+│   │       │   ├── types/
+│   │       │   ├── queries/
+│   │       │   ├── mutations/
+│   │       │   └── subscriptions/
+│   │       └── resolvers/
+│   │
+│   ├── services/
+│   │   ├── auth/                 # Authentication service
+│   │   ├── user/                 # User management
+│   │   ├── project/              # Project management
+│   │   ├── payment/              # Payment processing
+│   │   ├── notification/         # Notification system
+│   │   └── storage/              # IPFS storage service
+│   │
+│   ├── db/
+│   │   ├── models/              # Database models
+│   │   ├── migrations/          # CockroachDB migrations
+│   │   └── repositories/        # Data access layer
+│   │
+│   ├── websocket/
+│   │   ├── handlers/           # WebSocket event handlers
+│   │   ├── rooms/             # Room management
+│   │   └── types/             # WebSocket types
+│   │
+│   ├── queue/
+│   │   ├── producers/         # Kafka message producers
+│   │   ├── consumers/         # Kafka message consumers
+│   │   └── topics/            # Kafka topic definitions
+│   │
+│   ├── cache/
+│   │   ├── strategies/        # Caching strategies
+│   │   └── keys/             # Redis key management
+│   │
+│   ├── utils/
+│   │   ├── validation.ts      # Input validation utilities
+│   │   ├── encryption.ts      # Encryption utilities
+│   │   ├── logger.ts          # Logging utility
+│   │   └── errors.ts          # Error handling
+│   │
+│   └── types/                # TypeScript type definitions
+│
+├── tests/
+│   ├── unit/
+│   ├── integration/
+│   └── e2e/
+│
+├── scripts/
+│   ├── deploy.ts
+│   ├── migrate.ts
+│   └── seed.ts
+│
+├── deno.json                # Deno configuration
+├── deno.lock               # Dependency lock file
+├── import_map.json        # Import map for dependencies
+├── README.md
+└── docker-compose.yml     # Local development setup
+```
+
 This backend infrastructure provides a robust foundation for FreedomForge's decentralized freelancing platform, ensuring reliability, scalability, and security while maintaining the system's decentralized nature.
 
 ### Frontend Architecture
